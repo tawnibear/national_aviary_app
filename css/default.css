@@ -1,0 +1,369 @@
+@charset "utf-8";
+
+body {
+	font-family: 'UbuntuLight', sans-serif !important;
+	font-size: 1em;
+	line-height: 1.5em;
+	text-shadow: none !important;
+}
+
+.orange {
+	color: #fd6a41;
+}
+
+.blue {
+	color: #1f9bde;
+}
+
+.small {
+	font-size: 0.75em;
+}
+
+img.small {
+	width: 20px !important;
+	height: 20px !important;
+	display: inline-block !important;
+	vertical-align: middle;
+	margin: -6px 0 0 0;
+}
+
+.center {
+	text-align: center;
+}
+
+.ui-overlay-a, .ui-page-theme-a,
+.ui-page-theme-a .ui-panel-wrapper {
+	background-color: #fff !important;
+	text-shadow: none !important;
+}
+
+header {
+	font-size: 1.15em;
+	border: 0px !important;
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+.ui-title {
+	margin: 0 25% !important;
+}
+
+footer {
+	border: 0 !important;
+}
+
+footer li a {
+	padding-top: 42px !important;
+	padding-bottom: 10px !important;
+}
+
+.ui-filterable {
+	padding-top: 3px;
+}
+
+.ui-filterable input {
+	font-family: 'UbuntuLight', sans-serif !important;
+	font-weight: normal !important;
+	padding: 12px 15px 12px 34px;
+}
+
+.ui-input-search::after {
+	left: 0.75em !important;
+}
+
+.ui-listview li a {
+	padding: 15px 18px;
+}
+
+li.ui-first-child a {
+	border: 0px !important;
+}
+
+h1#siteId {
+	width: 252px;
+	height: 142px;
+	background: url(../images/bg-header.png) top center no-repeat;
+	background-size: 100%;
+	margin: auto;
+	padding: 0;
+}
+
+h1#siteId span {
+	display: none;
+}
+
+h1, h2, h3, h4, h5, h6, strong, .ui-btn,
+.ui-footer .ui-btn, .ui-listview,
+.ui-listview li a, .ui-collapsible-heading a {
+	font-family: 'UbuntuBold', sans-serif !important;
+	text-shadow: none !important;
+	font-weight: normal !important;
+}
+
+h3 {
+	font-size: 1.15em;
+	margin: -6px 0 0;
+}
+
+h5 {
+	font-size: 0.85em;
+	margin-bottom: -8px !important;
+}
+
+.headerBar {
+	padding: 8px 16px 10px !important;
+	background: #ffe9db;
+	text-align: center;
+}
+
+.fullBar {
+	width: 100%;
+	margin: -16px 0 16px -16px !important;
+}
+
+.border {
+	border-top: 1px solid #e5e5e5;
+	margin-top: 32px !important;
+}
+
+.noBorderTop {
+	border-top: 0px !Important;
+}
+
+.noBorder {
+	border: 0px !Important;
+}
+
+.ui-collapsible {
+	margin: 0 16px;
+}
+
+.birdPages .ui-collapsible p {
+	padding: 0 !important;
+}
+
+.ui-listview > .ui-li-has-thumb > .ui-btn, .ui-listview > .ui-li-static.ui-li-has-thumb {
+    min-height: 1em !important;
+    padding: 15px 35px 15px 68px !important;
+}
+
+.ui-listview p {
+	font-family: 'UbuntuLight', sans-serif !important;
+	font-weight: normal !important;
+}
+
+.ui-li-divider {
+	color: #fd6a41;
+	background: none;
+	border: 0px !important;
+	font-size: 1em !important;
+	font-family: 'UbuntuBold', sans-serif !important;
+	font-weight: normal !important;
+}
+
+.shrink {
+	width: auto !important;
+	margin: 0 16px;
+}
+
+#content img {
+	width: 100%;
+}
+
+
+/* CUSTOM ICONS
+---------------------------------------------------------- */
+.ui-icon-mycarat li a:after {
+	background-image: url(../images/icons/carat-r-gray.svg) !important;
+}
+
+.ui-icon-mymap:after {
+	background: url(../images/icons/map.svg) no-repeat top center !important;
+	border-radius: 0 !important;
+	top: 9px;
+	left: 46% !important;
+	width: 30px !important;
+	height: 30px !important;
+}
+
+.ui-icon-myexplore:after {
+	background-image: url(../images/icons/explore.svg) !important;
+	border-radius: 0 !important;
+	top: 10px;
+	left: 45% !important;
+	width: 31px !important;
+	height: 31px !important;
+}
+
+.ui-icon-myinfo:after {
+	background-image: url(../images/icons/info.svg) !important;
+	border-radius: 0 !important;
+	top: 9px;
+	left: 46% !important;
+	width: 30px !important;
+	height: 30px !important;
+}
+
+.ui-icon-mydonate:after {
+	background-image: url(../images/icons/donate.svg) !important;
+	border-radius: 0 !important;
+	top: 9px;
+	left: 46% !important;
+	width: 30px !important;
+	height: 30px !important;
+}
+
+.ui-icon-myadopt:after {
+	background-image: url(../images/icons/adopt.svg) !important;
+	border-radius: 0 !important;
+	top: 9px;
+	left: 46% !important;
+	width: 30px !important;
+	height: 30px !important;
+}
+
+.ui-icon-back:after {
+	background-image: url(../images/icons/back.svg) !important;
+	bakground-size: 100%;
+	border-radius: 0 !important;
+}
+
+.ui-icon-home:after {
+	background-image: url(../images/icons/home.svg) !important;
+	bakground-size: 100%;
+	border-radius: 0 !important;
+}
+
+header .ui-btn-icon-notext.ui-corner-all {
+	margin-left: 1px;
+	margin-right: 2px;
+	margin-top: 3px;
+	padding: 2px;
+	border-radius: 100px !important;
+}
+
+
+/* HOME
+---------------------------------------------------------- */
+#home {
+	background: url(../images/bg-home.jpg) top center no-repeat;
+	background-size: 100%;
+}
+
+#home header {
+	background-color: transparent !important;
+}
+
+
+/* MAP
+---------------------------------------------------------- */
+#map {
+	height: 100% !important;
+}
+
+#map article {
+	height: 100% !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.panzoom {
+	height: 100% !important;
+	text-align: center;
+}
+
+.panzoom img {
+	position: absolute;
+	top: 8%;
+	left: 0;
+}
+
+
+/* BIRDS
+---------------------------------------------------------- */
+#birds {
+	padding-top: 30px !important;
+}
+
+#birds ul img {
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+	left: 15px;
+	top: 5px;
+}
+
+#birds .ui-li-divider {
+	border-top: 1px solid #e5e5e5 !important;
+}
+
+
+/* INDIVIDUAL BIRD PAGES
+---------------------------------------------------------- */
+.adopt {
+	width: 100px !important;
+	height: auto !important;
+	float: right;
+	margin: 16px 10px 0 0.75em;
+}
+
+.birdPages {
+	padding: 0 !important;
+}
+
+.birdPages p {
+	padding: 0 16px !important;
+}
+
+.birdPages .ui-body {
+	width: auto !important;
+	margin: 0 16px 10px;
+	padding: 25px 16px 20px 95px;
+	background: url(../images/icons/map-orange.svg) no-repeat left center;
+	background-size: 60px;
+	background-position: 18px 15px;
+}
+
+.birdPages .ui-grid-a {
+	margin: 0 12px 15px;
+}
+
+.birdImg {
+	width: 100% !important;
+}
+
+
+/* SCHEDULE
+---------------------------------------------------------- */
+.ticket {
+	width: auto !important;
+	margin: 0 0 0;
+	padding: 0 0 0 22px;
+	background: url(../images/icons/ticket.svg) no-repeat left center;
+	background-size: 19px;
+}
+
+.time {
+	font-size: 0.85em;
+	line-height: 1em;
+	text-align: center;
+	color: #fd6a41;
+	float: left;
+	display: block;
+	width: 58px;
+	height: 49px;
+	margin: -11px 14px -15px -2px;
+	padding: 35px 14px 0 0;
+	border-right: 1px solid #e5e5e5;
+}
+
+
+/* HOURS & ADMISSION
+---------------------------------------------------------- */
+#hours .ui-listview p {
+	font-size: 1em;
+}
+
+#hours .ui-listview .small {
+	font-size: 0.75em !Important;
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The National Aviary | The Nation's Premier Bird Zoo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" media="screen">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/themes/national_aviary.css" />
+    <link rel="stylesheet" type="text/css" href="css/default.css" media="screen">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery.panzoom.min.js"></script>
+    <script type="text/javascript" src="js/mousewheel.js"></script>
+    <script type="text/javascript" src="js/myjs.js"></script>
+</head>
+
+<body>
+<!------------------ ### HOME ### ------------------>
+<section data-role="page" id="home">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <hgroup>
+            <h1 id="siteId"><span>The National Aviary</span></h1>
+        </hgroup>
+    </header>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end home page ------------------>
+
+
+
+
+
+<!------------------ ### MAP ### ------------------>
+<section data-role="page" id="map">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h1>Map</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content">
+        <div class="panzoom"><img src="images/maps/map-large.jpg"></div>
+        <script>
+		   (function() {
+			  var $section = $('article');
+			  var $panzoom = $section.find('.panzoom').panzoom();
+			  $panzoom.parent().on('mousewheel.focal', function( e ) {
+				e.preventDefault();
+				var delta = e.delta || e.originalEvent.wheelDelta;
+				var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+				$panzoom.panzoom('zoom', zoomOut, {
+				  increment: 0.1,
+				  animate: false,
+				  focal: e
+				});
+			  });
+			})();
+		</script>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end map page ------------------>
+
+
+
+
+
+<!------------------ ### EXPLORE ### ------------------>
+<section data-role="page" id="explore">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h1>Explore</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content">
+        <ul data-role="listview" class="ui-icon-mycarat" data-theme="b">
+            <li><a href="#schedule" data-transition="slide">Today's Schedule</a></li>
+            <li><a href="#birds" data-transition="slide">Meet the Birds</a></li>
+            <li><a href="#exhibits" data-transition="slide">Exhibits</a></li>
+            <li><a href="#shows" data-transition="slide">Shows &amp; Feedings</a></li>
+            <li><a href="#dining" data-transition="slide">Dining &amp; Shopping</a></li>
+        </ul>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end explore page ------------------>
+
+
+
+
+
+<!------------------ ### TODAY'S SCHEDULE ### ------------------>
+<section data-role="page" id="schedule">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-theme="e">Back</a>
+        <h1>Today's Schedule</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content">
+        <h3 class="orange headerBar fullBar"><script>document.write(today);</script></h3>
+        <p class="small center"><img src="images/icons/ticket.svg" alt="Ticket" class="small"> = Requires additional ticket or fee</p>
+        
+        <ul data-role="listview" data-theme="b">
+            <li class="border"><span class="time">10:30 am</span><h5>Wetlands Feeding</h5><p>Wetlands</p></li>
+            <li><span class="time">11:00 am</span><h5 class="ticket"><em>Beaks 2</em></h5><p>Helen M. Schmidt FliteZone&#8482; Theater</p></li>
+            <li><span class="time">11:30 am</span><h5 class="ticket">Lorikeet Feeding</h5><p>Canary's Call</p></li>
+            <li><span class="time">11:45 am</span><h5>Meet a Patient</h5><p>Avian Care Center</p></li>
+            <li><span class="time">12:00 pm</span><h5><em>Taking Flight</em></h5><p>Rose Garden</p></li>
+            <li><span class="time">12:30 pm</span><h5>Tropical Forest Feeding</h5><p>Tropical Forest</p></li>
+            <li><span class="time">1:00 pm</span><h5>Penguin Feeding</h5><p>Penguin Point</p></li>
+            <li><span class="time">1:30 pm</span><h5>Wetlands Feeding</h5><p>Wetlands</p></li>
+            <li><span class="time">2:00 pm</span><h5 class="ticket"><em>Beaks 2</em></h5><p>Helen M. Schmidt FliteZone&#8482; Theater</p></li>
+            <li><span class="time">2:30 pm</span><h5 class="ticket">Lorikeet Feeding</h5><p>Canary's Call</p></li>
+            <li><span class="time">3:00 pm</span><h5 class="ticket"><em>Soar!</em></h5><p>Skydeck</p></li>
+            <li><span class="time">3:00 pm</span><h5>Aviary A La "Cart"</h5><p>Canary's Call</p></li>
+            <li><span class="time">3:30 pm</span><h5>Bat Feeding</h5><p>Canary's Call</p></li>
+            <li><span class="time">4:00 pm</span><h5>Penguin Feeding</h5><p>Penguin Point</p></li>
+            <li><span class="time">4:00 pm</span><h5 class="ticket">Lorikeet Feeding</h5><p>Canary's Call</p></li>
+		</ul>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end today's schedule page ------------------>
+
+
+
+
+
+<!------------------ ### MEET THE BIRDS ### ------------------>
+<section data-role="page" id="birds">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-theme="e">Back</a>
+        <h1>Meet the Birds</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content">
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Search birds..." data-autodividers="true" class="ui-icon-mycarat" data-theme="b">
+            <li><a href="#africangreyparrot" data-transition="slide"><img src="images/birds/th_africanGreyParrot.jpg" alt="">African Grey Parrot</a></li>
+            <li><a href="#" data-transition="slide">Bird 2</a></li>
+            <li><a href="#" data-transition="slide">Bird 3</a></li>
+            <li><a href="#" data-transition="slide">Bird 4</a></li>
+            <li><a href="#" data-transition="slide">Bird 5</a></li>
+            <li><a href="#" data-transition="slide">Bird 6</a></li>
+            <li><a href="#" data-transition="slide">Bird 7</a></li>
+            <li><a href="#" data-transition="slide">Bird 8</a></li>
+            <li><a href="#" data-transition="slide">Bird 9</a></li>
+            <li><a href="#" data-transition="slide">Bird 10</a></li>
+            <li><a href="#" data-transition="slide">Bird 11</a></li>
+            <li><a href="#" data-transition="slide">Bird 12</a></li>
+            <li><a href="#" data-transition="slide">Bird 13</a></li>
+            <li><a href="#" data-transition="slide">Bird 14</a></li>
+            <li><a href="#" data-transition="slide">Bird 15</a></li>
+        </ul>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end meet the birds page ------------------>
+
+
+
+
+
+<!------------------ ### AFRICAN GREY PARROT ### ------------------>
+<section data-role="page" id="africangreyparrot">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-theme="e">Back</a>
+        <h1>African Grey Parrot</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content" class="birdPages">
+        <img src="images/birds/africanGreyParrot.jpg" alt="African Grey Parrot">
+        <h3 class="orange headerBar">African Grey Parrot</h3>
+        <a href="#adopt" data-transition="slide"><img src="images/adoptabird.png" class="adopt" alt="Adopt-a-Bird Eligible"></a>
+        
+        <p><strong>Scientific Name:</strong><br />Psittacus erithacus</p>
+        <p><strong>Fun Fact:</strong><br/>Our Earl and Zane make a variety of noises, including a kiss, a cough, variations on “hello” and “goodbye”, and a wide variety of whistles, clicks, and beeps. They often use interesting noises to attract attention from visitors.</p>
+        <p><strong>Whereabouts:</strong><br/>West and Central Africa</p>
+        <p><strong>Habitat:</strong><br/>Primary and secondary forests</p>
+        <p><strong>Diet:</strong><br/>Fruits, seeds, nuts, and leaves.</p>
+        <p><strong>Breeding:</strong><br/>African Grey Parrots are monogamous and not much is known of their courtship displays in the wild. They make their nests in hollow tree cavities and generally lay between 1 and 4 white eggs. The eggs take approximately 28 days to hatch and the young birds remain with their parents for 4 months or more.</p>
+        <p><strong>Status:</strong><br/>Near Threatened</p>
+                
+        <div class="ui-body ui-body-a ui-corner-all"><h3 class="blue">Locate this bird:</h3>
+        You can see Earl and Zane in the <strong>Grasslands</strong> exhibit.</div>
+        
+        <div class="ui-grid-a">
+        	<div class="ui-block-a"><a href="#donate" data-iconpos="top" data-role="button" data-theme="g">Donate Now</a></div>
+        	<div class="ui-block-b"><a href="#adopt" data-role="button" data-theme="g">Adopt-a-Bird</a></div>
+        </div>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end african grey parrot page ------------------>
+
+
+
+
+
+<!------------------ ### EXHIBITS ### ------------------>
+<section data-role="page" id="exhibits">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-theme="e">Back</a>
+        <h1>Exhibits</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content">
+        <ul data-role="listview" class="ui-icon-mycarat" data-theme="b">
+            <li><a href="#canaryscall" data-transition="slide">Canary's Call</a></li>
+            <li><a href="#cloudforest" data-transition="slide">Cloud Forest</a></li>
+            <li><a href="#condorcourt" data-transition="slide">Condor Court</a></li>
+            <li><a href="#eaglehall" data-transition="slide">Eagle Hall</a></li>
+            <li><a href="#grasslands" data-transition="slide">Grasslands</a></li>
+            <li><a href="#penguinpoint" data-transition="slide">Penguin Point</a></li>
+            <li><a href="#tropicalrainforest" data-transition="slide">Tropical Rainforest</a></li>
+            <li><a href="#wetlands" data-transition="slide">Wetlands</a></li>
+        </ul>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end exhibits page ------------------>
+
+
+
+
+
+<!------------------ ### SHOWS & FEEDINGS ### ------------------>
+<section data-role="page" id="shows">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-theme="e">Back</a>
+        <h1>Shows & Feedings</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content">
+        <ul data-role="listview" class="ui-icon-mycarat" data-theme="b">
+            <li><a href="#interactive" data-transition="slide">Interactive Encounters</a></li>
+            <li><a href="#beaks2" data-transition="slide"><em>Beaks 2</em></a></li>
+            <li><a href="#soar" data-transition="slide"><em>Soar!</em></a></li>
+            <li><a href="#takingflight" data-transition="slide"><em>Taking Flight</em></a></li>
+        </ul>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end shows & feedings page ------------------>
+
+
+
+
+
+<!------------------ ### DINING & SHOPPING ### ------------------>
+<section data-role="page" id="dining">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-theme="e">Back</a>
+        <h1>Dining & Shopping</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content" class="birdPages">
+        <img src="images/other/atrias.jpg" alt="Atria's Kookabura Kitchen">
+        <h3 class="orange headerBar">Atria's Kookabura Kitchen</h3>
+        <p>Atria's Kookaburra Kitchen provides a wide variety of dining options for National Aviary visitors. From home-made soups and fresh salads to daily specials and sandwiches, Atria's Kookaburra Kitchen is proud to offer a wide array of specialized meals that offer a diverse selection of options for your family and friends.</p>
+        <div data-role="collapsible" data-theme="g">
+            <h4>View Daily Menu Specials</h4>
+            <ul data-role="listview" data-theme="b">
+                <li class="noBorderTop"><h5>Monday</h5><p>Vegetable Soup<br>Pulled Pork Sliders with a bag of chips</p></li>
+                <li><h5>Tuesday</h5><p>Italian Wedding Soup<br>Buffalo Chicken Wrap with fries</p></li>
+                <li><h5>Wednesday</h5><p>Tomato Romano<br>Chicken Parmasen Sandwich with side salad</p></li>
+                <li><h5>Thursday</h5><p>Italian Wedding Soup / Chili<br>Buffalo Chicken Pizza</p></li>
+                <li><h5>Friday</h5><p>Sherry Crab Bisque<br>Fish Sandwich with fries or chips</p></li>
+                <li><h5>Saturday & Sunday</h5><p>Chef's Choice</p></li>
+            </ul>
+        </div>
+		<br><br>
+        <img src="images/other/giftshop.jpg" alt="National Aviary Gift Shop">
+        <h3 class="orange headerBar">National Aviary Gift Shop</h3>        
+        <p>The National Aviary Gift Shop offers an array of quality nature-themed gifts, art work, books, toys, and clothing. Browse our selection of field guides, purchase a National Aviary shirt to remember your visit, or find a unique, bird-inspired collectible to grace your home or office. The Gift Shop also offers educational toys and books that will help to instill a love and respect for nature in children of all ages.</p>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end dining & shopping page ------------------>
+
+
+
+
+
+<!------------------ ### VISITOR INFO ### ------------------>
+<section data-role="page" id="info">
+
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h1>Visitor Info</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content">
+        <ul data-role="listview" data-theme="b" class="ui-icon-mycarat">
+            <li><a href="#hours" data-transition="slide">Hours & Admissions</a></li>
+            <li><a href="#getHere" data-transition="slide">How to Get Here</a></li>
+            <li><a href="#groups" data-transition="slide">Group Tours</a></li>
+            <li><a href="#accessibility" data-transition="slide">Accessibility</a></li>
+            <li><a href="#policies" data-transition="slide">Guest Policies</a></li>
+            <li><a href="#volunteer" data-transition="slide">Volunteer Programs</a></li>
+            <li><a href="#contact" data-transition="slide">Contact Information</a></li>
+            <li><a href="#connect" data-transition="slide">Connect With Us</a></li>
+        </ul>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end visitor info page ------------------>
+
+
+
+
+
+<!------------------ ### HOURS & ADMISSION ### ------------------>
+<section data-role="page" id="hours">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a href="#" data-rel="back" data-icon="back" data-iconpos="notext" data-transition="slide" data-direction="reverse" data-theme="e">Back</a>
+        <h1>Hours & Admission</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right" data-theme="e">Home</a>
+    </header>
+    <article id="content" data-role="content">
+        <h3 class="orange headerBar fullBar">Open Hours</h3>        
+        <p><strong>Daily Hours:</strong><br>10:00 am – 5:00 pm</p>
+        <p><strong>Holiday Hours:</strong><br>We are open most holidays except for Thanksgiving, Christmas Eve and Christmas Day. We are open from 10:00 am – 3:00 pm on New Year's Eve.</p>
+        <br>
+        <h3 class="orange headerBar fullBar">Admission Prices</h3> 
+        <ul data-role="listview" data-theme="b">
+            <li class="noBorderTop"><h5>General Admission</h5><p>Adult: $14 &nbsp; &nbsp; Child: $12 &nbsp; &nbsp; Senior: $13</p></li>
+            <li><h5>General Admission + 1 Show</h5><p>Adult: $19 &nbsp; &nbsp; Child: $17 &nbsp; &nbsp; Senior: $18</p></li>
+            <li><h5>General Admission + 2 Shows</h5><p>Adult: $23 &nbsp; &nbsp; Child: $21 &nbsp; &nbsp; Senior: $22</p></li>
+            <li><h5>All Day Pass</h5><p><em class="small">(Includes admission, 3 shows, and a Lorikeet feeding.)</em><br>Adult: $25 &nbsp; &nbsp; Child: $23 &nbsp; &nbsp; Senior: $24</p></li>
+            <li><p class="small">*Children under 2 are free (ages 2-12).</p></li>
+        </ul>
+    </article>
+    <footer data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-iconpos="top">
+        	<ul>
+                <li><a href="#map" class="ui-icon-mymap" data-icon="custom" data-transition="slide" data-theme="a">Aviary Map</a></li>
+                <li><a href="#explore" class="ui-icon-myexplore" data-icon="custom" data-transition="slide" data-theme="a">Explore</a></li>
+                <li><a href="#info" class="ui-icon-myinfo ui-btn-active ui-state-persist" data-icon="custom" data-transition="slide" data-theme="a">Visitor Info</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<!------------------ end hours & admission page ------------------>
+
+</body>
+</html>
